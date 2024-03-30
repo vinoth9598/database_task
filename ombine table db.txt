@@ -1,0 +1,71 @@
+	COMBINE TABLES ;
+	
+	-select students.name,students.Degree,student_details.course,student_details.Attendance,student_details.performance from Students
+   	 	-> inner join student_details
+   	 	-> on Students.Attendance_id = student_details.id;
++---------------+-----------------------+----------------------+------------+---------------+
+| name          | Degree                | course               | Attendance | performance   |
++---------------+-----------------------+----------------------+------------+---------------+
+| Arun          | IT                    | Full Stock Developer | 90%        | Good          |
+| vijay kumar   | B.Tect                | Data Science         | 94%        | Well          |
+| Suresh        | B.E-mechanical        | Core Java            | 90%        | medium        |
+| Divya         | B,sc-Computer Science | Python Developer     | 97%        | Improved      |
+| Praveen       | csc                   | Machine learning     | 80%        | more practice |
+| Dhanalakshimi | B.E-Ece               | Full Stock Developer | 70%        | medium        |
+| Balamurugan   | M,sc                  | UI & UX Designer     | 98%        | Excellent     |
+| Haripriya     | B.Tech                | front End developer  | 87%        | Good          |
+| Archana       | DCE                   | Back End Developer   | 97%        | very good     |
+| vinoth kumar  | B.E-mechanical        | mern stock developer | 90%        | medium        |
++---------------+-----------------------+----------------------+------------+---------------+
+
+	-select d.programme_language,c.pre_read from dashboard as d
+    		-> inner join content as c
+    		-> on d.days = c.content_id;
++--------------------+----------------------------------------------------------------------------------------+
+| programme_language | pre_read                                                                               |
++--------------------+----------------------------------------------------------------------------------------+
+| javascript         | No preread available                                                                   |
+| javascript         | No preread available                                                                   |
+| javascript         | No preread available                                                                   |
+| javascript         | https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions                |
+| javascript         | https://aravishack.medium.com/es6-features-a-walk-through-1ffd8eb82f6
+                 |
+| javascript         | http://es6-features.org/                                                               |
+| javascript         | https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array |
+| HTML               | https://developer.mozilla.org/en-US/docs/Web/HTML                                      |
+| HTML               | https://www.w3schools.com/html/default.asphttps://github.com/rvsp/html-CSS/            |
+| html               | https://rvsp.github.io/CSS/                                                            |
+| html               | https://rvsp.github.io/CSS/                                                            |
+| html               | https://getbootstrap.com/docs/4.6/getting-started/introduction/                        |
+| Dom                | https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+                |
+| Dom                | preread not Available                                                                  |
+| Dom                | No preread available                                                                   |
+| Async programming  |  http://latentflip.com/loupe/                                                          |
+| Async programming  | No preread available                                                                   |
+| Async programming  | No preread available                                                                   |
+| Async programming  | https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch                 |
+| Async programming  | No preread available                                                                   |
+| React              | http://es6-features.org/                                                               |
+| React              | https://react.dev/                                                                     |
+| React              | No preread available                                                                   |
+| React              | No preread available                                                                   |
+| React              | https://www.npmjs.com/package/react-router-dom                                         |
+| React              | No preread available                                                                   |
+| React              | https://reactjs.org/docs/hooks-reference.html#usestate                                 |
+| React              | https://reactjs.org/docs/hooks-reference.html#usestate                                 |
+| React              | https://www.npmjs.com/package/axios                                                    |
+| React              | No preread available                                                                   |
+| React              | No preread available                                                                   |
+| React              | https://redux.js.org/                                                                  |
+| Database           | https://dev.mysql.com/doc/                                                             |
+| Database           | https://dev.mysql.com/doc/                                                             |
+| Database           | https://docs.mongodb.com/manual/                                                       |
+| Database           | https://docs.mongodb.com/manual/                                                       |
+| Notejs             | https://nodejs.org/                                                                    |
+| Notejs             | https://expressjs.com/                                                                 |
+| Notejs             | No preread available                                                                   |
+| Notejs             | https://www.npmjs.com/package/dotenv                                                   |
+| Notejs             | https://www.npmjs.com/package/bcrypt                                                   |
+| Notejs             | https://www.npmjs.com/package/jsonwebtoken                                             |
++--------------------+----------------------------------------------------------------------------------------+

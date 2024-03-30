@@ -1,0 +1,154 @@
+	Design DB model for Guvi Zen class;
+
+		-create database zenclass;
+		-use zenclass;
+		-create tables
+			-Students
+			-Student_details
+			-Dashboard
+			-Content
+		
+			
+		 -show tables
+			+--------------------+
+			| Tables_in_zenclass |
+			+--------------------+
+			| content            |
+			| dashboard          |
+			| student_details    |
+			| students           |
+			+--------------------+
+
+		
+		 -create table students 
+			(student_id int not null primary key,
+			Name varchar(255) not null,
+			Degree varchar(255) not null,
+			Attendance_id int not null);
+		-alter table students add foreign key (Attendance_id) references student_details(id);
+			
+		 -create table student_details (Id int not null ,
+			Course varchar(255) not null ,
+			Attendance int not null,
+			performance int not null);
+
+		 
+		 -insert into students values
+   			-> (1,'Arun','IT',101),(2,'vijay kumar','B.Tect',102),(3,'Suresh','B.E-mechanical',103),
+    		-> (4,'Divya','B,sc-Computer Science',104),
+    		-> (5,'Praveen','csc',105),(6,'Dhanalakshimi','B.E-Ece',106),
+    		-> (7,'Balamurugan','M,sc',107),(8,'Haripriya','B.Tech',108),
+   			-> (9,'Archana','DCE',109), (10,'vinoth kumar','B.E-mechanical',110);
+
+		 -insert into student_details values
+			-> (101,'Full Stock Developer','90%','Good'),(102,'Data Science ','94%','Well'), 
+			-> (103,'Core Java','90%','medium'),(104,'Python Developer','97%','Improved'),
+			-> (105,'Machine learning','80%','more practice'),
+			-> (106,'Full Stock Developer','70%','medium'), (107,'UI & UX Designer','98%','Excellent'),
+			-> (108,'front End developer','87%','Good'),(109,'Back End Developer','97%','very good'),
+			-> (110,'mern stock developer','90%','medium');
+
+		-create table dashboard (days int primary key auto_increment not null,
+			programme_language varchar(255) not null ,
+			Title varchar(255) not null,Date varchar(255) not null, 
+			Time varchar(255) not null);
+			
+		-create table content (content_id int not null foreign key references dashboard(days),
+			content varchar(255) not null,
+			pre_read varchar(255) not null,
+			Activities varchar(255) not null);
+
+		
+	
+		 -insert into dashboard values
+			  (1,'javascript','Introduction to browser and web','01-02-2024','6.30 to 9.30pm'),
+			  (2,'javascript','Datatypes','02-02-2024','6.30 to 9.30pm'),
+			  (3,'javascript','js array & objects','03-02-2024','6.30 to 9.30pm'),
+			  (4,'javascript','Functions','04-02-2024','6.30 to 9.30pm'),
+			  (5,'javascript','ES5 vs ES6','05-02-2024','6.30 to 9.30pm'),
+			  (6,'javascript','OOP in JS','08-02-2024','6.30 to 9.30pm'),
+			  (7,'javascript','Array methods','09-02-2024','6.30 to 9.30pm'),
+			  (8,'HTML','Basic tags','10-02-2024','6.30 to 9.30pm'),
+			  (9,'HTML','html & css','11-02-2024','6.30 to 9.30pm'),
+			  (10,'html','pseudo-classes','12-02-2024','6.30 to 9.30pm'),
+			  (11,'html','overflow','13-02-2024','6.30 to 9.30pm'),
+			  (12,'html','RWD','14-02-2024','6.30 to 9.30pm'),
+			  (13,'Dom','Basic functionality','16-02-2024','6.30 to 9.30pm'),
+			  (14,'Dom','Document vs Window','17-02-2024','6.30 to 9.30pm'),
+			  (15,'Dom','Recap of Topics','18-02-2024','6.30 to 9.30pm'),
+			  (16,'Async programming','callback function','19-02-2024','6.30 to 9.30pm'),
+			  (17,'Async programming','promise','20-02-2024','6.30 to 9.30pm'),
+			  (18,'Async programming','promise and Async await','23-02-2024','6.30 to 9.30pm'),
+			  (19,'Async programming','promise fetch and request-info & request-limit','24-02-2024','6.30 to 9.30pm'),
+			  (20,'Async programming','Recapof Topics','25-02-2024','6.30 to 9.30pm'),
+			  (21,'React','ES5 vs ES6','26-02-2024','6.30 to 9.30pm'),
+			  (22,'React','React','27-02-2024','6.30 to 9.30pm'),
+			  (23,'React','React hooks & states','29-02-2024','6.30 to 9.30pm'),
+			  (24,'React','React components','01-03-2024','6.30 to 9.30pm'),
+			  (25,'React','React Hooks','02-03-2024','6.30 to 9.30pm'),
+			  (26,'React','Router','03-03-2024','6.30 to 9.30pm'),
+			  (27,'React','Recap With Previous Day Topics','04-03-2024','6.30 to 9.30pm'),
+			  (28,'React','Context API','07-03-2024','6.30 to 9.30pm'),
+			  (29,'React','useRef & useReducer','08-03-2024','6.30 to 9.30pm'),
+			  (30,'React','Axios','09-03-2024','6.30 to 9.30pm'),
+			  (31,'React','practice with formik & recap','10-03-2024','6.30 to 9.30pm'),
+			  (32,'React','redux','11-03-2024','6.30 to 9.30pm'),
+			  (33,'Database','mysql','14-03-2024','6.30 to 9.30pm'),
+			  (34,'Database','mysql','15-03-2024','6.30 to 9.30pm'),
+			  (35,'Database','MongoDB','16-03-2024','6.30 to 9.30pm'),
+			  (36,'Database','MongoDB','17-03-2024','6.30 to 9.30pm'),
+			  (37,'Notejs','Nodejs','18-03-2024','6.30 to 9.30pm'),
+			  (38,'Notejs','Nodejs & Express.js','21-03-2024','6.30 to 9.30pm'),
+			  (39,'Notejs','Node & mongo DB connectivity','22-03-2024','6.30 to 9.30pm'),
+			  (40,'Notejs','Nodejs deployment','23-03-2024','6.30 to 9.30pm'),
+			  (41,'Notejs',' Authentication','24-03-2024','6.30 to 9.30pm'),
+			  (42,'Notejs','JWT','25-03-2024','6.30 to 9.30pm');
+
+
+
+	-insert into content values
+		(1,'Introduction to web Browser Wars DOM tree CSSOM tree','No preread available','null'),
+		(2,'HTML Browser view - Debugger Inspect Browser js vs Node js','No preread available','null'),
+		(3,'Array and JSON iteration XMLHttpRequest Hoisting & scope','No preread available','null'),
+		(4,'function & return keyword types of function','https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions','null'),
+		(5,'block scoping spread & rest operators array & object destructure','https://aravishack.medium.com/es6-features-a-walk-through-1ffd8eb82f6
+		','null'),
+		(6,'Basics of prototype need of setters/getters','http://es6-features.org/','null'),
+		(7,'Map Reduce Filter','https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array','not null'),
+		(8,'inline vs block elements HTML Forms Input elements and attributes Form submi','https://developer.mozilla.org/en-US/docs/Web/HTML','null'),
+		(9,'property & value class vs id use of important','https://www.w3schools.com/html/default.asphttps://github.com/rvsp/html-CSS/','null'),
+		(10,'Grid Flex Gradient parent inherit','https://rvsp.github.io/CSS/','null'),
+		(11,'overflow dropbox measurements fonts icons media query','https://rvsp.github.io/CSS/','null'),
+		(12,'What is the mobile-first approach Bootstrap','https://getbootstrap.com/docs/4.6/getting-started/introduction/','not null'),
+		(13,'createElement setAttribute getElementById querySelector vs querySelectorAll','https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+		','null'),
+		(14,'setTimeout vs setInterval prompt Alert  Confirm','preread not Available','null'),
+		(15,'recap of DOM topics','No preread available','not null'),
+		(16,'call stack web API event loop queue Use & its purpose of the callback Pain of callback',' http://latentflip.com/loupe/','not null'),
+		(17,' Promise States Promise chain promise.all() Use of fetch() & then()','No preread available','not null'),
+		(18,'Promise chaining Async/Await with error handling','No preread available','null'),
+		(19,'Implementing CRUD with HTML,CSS JavaScript','https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch','null'),
+		(20,'Recap of callback, Promise Topics','No preread available','not null'),
+		(21,'template literals spred & rest prarameter array & object destructure','http://es6-features.org/','not null'),
+		(22,'Understanding JSX Components Undetstanding the components','https://react.dev/','not null'),
+		(23,'Usage of keys Conditional rendering Handling Events Props vs State','No preread available','not null'),
+		(24,'Components - In-depth-life cycle Stateful and stateless Reusable components','No preread available','null'),
+		(25,'Lifecycle of Hook useState useEffect Props drilling','https://www.npmjs.com/package/react-router-dom','not null'),
+		(26,'BrouserRouter Switch Link Route URL params','No preread available','not null'),
+		(27,'Session-based Hands-on practice Task with any Admin Dashboard','https://reactjs.org/docs/hooks-reference.html#usestate','null'),
+		(28,'Context-API','https://reactjs.org/docs/hooks-reference.html#usestate','not null'),
+		(29,'useRef, useReducer','https://www.npmjs.com/package/axios','null'),
+		(30,'fetch() or Axios Implementing simple CRUD','No preread available','not null'),
+		(31,'Recap of CRUD','No preread available','not null'),
+		(32,'Intro to Redux - to understand the state management with react application','https://redux.js.org/','not null'),
+		(33,'intro to mysql engines basic queries - create db, table insert, update, alter','https://dev.mysql.com/doc/','not null'),
+		(34,'Normalization, select queries, joins','https://dev.mysql.com/doc/','not null'),
+		(35,'Mongodb vs MySQL creation of database, collections, documents find - query & projection use of operators in find() query','https://docs.mongodb.com/manual/','not null'),
+		(36,'map,toArray,pretty,forEach,limit,count,sort Aggregation','https://docs.mongodb.com/manual/','not null'),
+		(37,'Npm packages In build Third party Custom"','https://nodejs.org/','not null'),
+		(38,'API methods - GET,POST,PUT,DELETE Request & response objects ','https://expressjs.com/','not null'),
+		(39,'Connection to MongoDB(local & atlas)','No preread available','null'),
+		(40,'dotenv Deployment','https://www.npmjs.com/package/dotenv','null'),
+		(41,'Authentication bcrypt','https://www.npmjs.com/package/bcrypt','not null'),
+		(42,'JWT custom middleware authorization','https://www.npmjs.com/package/jsonwebtoken','not null');
+
